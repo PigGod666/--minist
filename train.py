@@ -93,8 +93,6 @@ def train(train_data, test_data, optimizer, loss, epoch):
                 test_n += y.shape[0]
         if (i+1) % 10 == 0:
             torch.save(net.state_dict(), f"./models/minst_resnet50_{i}.pt")
-        else:
-            print("not save")
 
         print(f"第{i+1}轮训练    损失：{l_sum:.3f}，训练精度：{train_acc/n:.3f}，测试精度：{test_acc/test_n:.3f}，时间：{time.time()-time_0:.3f}")
 
